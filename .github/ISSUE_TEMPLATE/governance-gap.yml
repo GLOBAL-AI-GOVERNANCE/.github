@@ -1,0 +1,24 @@
+name: Governance gap
+description: Identify a bounded gap in ownership, evidence, control, verification, or decision handling.
+title: "governance: "
+labels: ["governance"]
+body:
+  - type: textarea
+    id: gap
+    attributes:
+      label: Gap
+      description: What governance condition is missing, ambiguous, or inconsistent?
+    validations:
+      required: true
+  - type: textarea
+    id: consequence
+    attributes:
+      label: Consequence
+      description: What decision, evidence, or lifecycle outcome is affected?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Cite the relevant repository artifacts or observed behavior.

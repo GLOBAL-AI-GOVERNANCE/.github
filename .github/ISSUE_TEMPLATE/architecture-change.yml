@@ -1,0 +1,31 @@
+name: Architecture change
+description: Propose a change to repository boundaries, interfaces, schemas, or lifecycle responsibilities.
+title: "architecture: "
+labels: ["architecture"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Need
+      description: What problem requires an architectural change?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the smallest coherent change.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Identify affected repositories, contracts, evidence, tests, and public claims.
+    validations:
+      required: true
+  - type: textarea
+    id: recovery
+    attributes:
+      label: Recovery or supersession
+      description: How can the change be reverted or superseded safely?

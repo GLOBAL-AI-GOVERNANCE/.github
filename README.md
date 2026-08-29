@@ -11,4 +11,6 @@ It is infrastructure, not a product, framework, runtime, certification, or sourc
 - give issues and pull requests a predictable evidence-oriented structure;
 - preserve repository-specific maturity, validation, and release controls.
 
+The [Claims Integrity convention](docs/CLAIMS_INTEGRITY.md) supplies a minimal machine-readable status vocabulary, public-change review checklist, and self-validating control. It is an adoption baseline, not a claim that every organization repository is centrally enforced.
+
 See [GOVERNANCE.md](GOVERNANCE.md) and [docs/CHANGE_CONTROL.md](docs/CHANGE_CONTROL.md).

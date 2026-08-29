@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:global-ai-governance:schema:claims-integrity:1.0.0",
+  "title": "GLOBAL AI GOVERNANCE Claims Integrity Convention",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "control_id", "delivery_states", "evidence_states", "required_review_questions", "release_rule", "authority_boundary"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "control_id": {"const": "GLOBAL-AI-GOVERNANCE.CLAIMS-INTEGRITY"},
+    "delivery_states": {"const": ["PROPOSED", "DEFINED", "SHIPPED"]},
+    "evidence_states": {"const": ["NOT_YET_ESTABLISHED", "VERIFIED"]},
+    "required_review_questions": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "release_rule": {"type": "string", "minLength": 1},
+    "authority_boundary": {"type": "string", "minLength": 1}
+  }
+}

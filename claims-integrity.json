@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "control_id": "GLOBAL-AI-GOVERNANCE.CLAIMS-INTEGRITY",
+  "delivery_states": ["PROPOSED", "DEFINED", "SHIPPED"],
+  "evidence_states": ["NOT_YET_ESTABLISHED", "VERIFIED"],
+  "required_review_questions": [
+    "What exact public claim changes?",
+    "What repository evidence supports that bounded claim?",
+    "What does the evidence not establish?",
+    "Does the wording preserve published release and maturity truth?"
+  ],
+  "release_rule": "Only a repository-authorized release action may promote implementation to SHIPPED.",
+  "authority_boundary": "Automated checks detect declared inconsistencies; they do not approve claims, releases, certification, compliance, safety, or production use."
+}

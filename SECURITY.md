@@ -1,7 +1,23 @@
 # Security Policy
 
-Do not disclose secrets, credentials, sensitive personal data, exploit chains, or operationally dangerous details in a public issue.
+Do not disclose secrets, credentials, sensitive personal data, exploit chains, operationally dangerous details, or suspected vulnerability details in a public issue.
 
-For a suspected vulnerability, use GitHub's private vulnerability reporting feature when the target repository enables it. If no private reporting path is available, open a minimal public issue that requests a private contact path without publishing exploit details.
+## Report a Vulnerability Privately
 
-Public repositories in this portfolio are reference engineering artifacts unless the repository explicitly states otherwise. Their checks do not by themselves establish production security, certification, compliance, or authorization.
+Use the target repository's GitHub **Private Vulnerability Reporting** flow from its **Security** area.
+
+Do not open a public issue for a suspected vulnerability.
+
+Include only the information necessary for responsible review, such as:
+
+- affected repository, version, commit, file, workflow, or behavior;
+- reproduction steps;
+- expected and observed behavior;
+- potential safety, security, privacy, governance, or supply-chain impact; and
+- suggested remediation when available.
+
+Do not include production credentials, regulated data, customer information, third-party secrets, or unnecessary live exploit material.
+
+## Evidence Boundary
+
+Public repositories in this portfolio are reference engineering artifacts unless the repository explicitly states otherwise. Their checks do not by themselves establish production security, certification, compliance, authorization, or operational effectiveness.

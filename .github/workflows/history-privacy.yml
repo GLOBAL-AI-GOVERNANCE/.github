@@ -1,0 +1,28 @@
+name: Reusable History Privacy
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  history-privacy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out caller history
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          path: target
+      - name: Check out governance control
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: GLOBAL-AI-GOVERNANCE/.github
+          ref: ${{ github.workflow_sha }}
+          path: control
+          sparse-checkout: tools/check_history_privacy.py
+          sparse-checkout-cone-mode: false
+      - name: Check reachable history privacy
+        working-directory: target
+        run: python3 -B ../control/tools/check_history_privacy.py

@@ -5,6 +5,8 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  schedule:
+    - cron: "17 1 * * 0"
 
 permissions:
   contents: read
@@ -15,5 +17,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Check reachable history privacy
+        run: python3 -B tools/check_history_privacy.py
       - name: Validate shared claims convention
         run: python3 -B tools/validate_claims_integrity.py

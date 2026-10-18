@@ -19,7 +19,7 @@ It is infrastructure, not a product, framework, runtime, certification, or sourc
 
 The [Claims Integrity convention](docs/CLAIMS_INTEGRITY.md) supplies a minimal machine-readable status vocabulary, public-change review checklist, and self-validating control. It is an adoption baseline, not a claim that every organization repository is centrally enforced.
 
-See [GOVERNANCE.md](GOVERNANCE.md) and [docs/CHANGE_CONTROL.md](docs/CHANGE_CONTROL.md).
+See [GOVERNANCE.md](GOVERNANCE.md), [docs/CHANGE_CONTROL.md](docs/CHANGE_CONTROL.md), and the opt-in [Release Governance Convention](docs/RELEASE_GOVERNANCE.md).
 
 <!-- gag:footer -->
 ## Part of Global AI Governance

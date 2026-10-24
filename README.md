@@ -3,7 +3,7 @@
 <!-- gaig:nav -->
 [![Global AI Governance](https://img.shields.io/badge/Global_AI_Governance-portfolio-0b100d)](https://github.com/GLOBAL-AI-GOVERNANCE/GLOBAL-AI-GOVERNANCE) ![Status](https://img.shields.io/badge/status-infrastructure-lightgrey) ![authority_effect](https://img.shields.io/badge/authority__effect-NONE-lightgrey)
 
-**[Connect your agent](https://global-ai-governance.github.io/global-ai-governance-toolkit/connect.html#agents)** · **[Read the spec](https://global-ai-governance.github.io/global-ai-governance-toolkit/connect.html#spec)** · [All products](https://github.com/GLOBAL-AI-GOVERNANCE/GLOBAL-AI-GOVERNANCE#product-map)
+**[Connect your agent](https://ai-governance.solutions/connect.html#agents)** · **[Read the spec](https://ai-governance.solutions/connect.html#spec)** · [All products](https://github.com/GLOBAL-AI-GOVERNANCE/GLOBAL-AI-GOVERNANCE#product-map)
 <!-- /gaig:nav -->
 
 This repository provides account-level repository governance defaults for public repositories owned by `GLOBAL-AI-GOVERNANCE` when a repository does not define a local override.
@@ -26,8 +26,8 @@ See [GOVERNANCE.md](GOVERNANCE.md), [docs/CHANGE_CONTROL.md](docs/CHANGE_CONTROL
 
 This repository holds the account-level repository governance defaults for every Global AI Governance repository.
 
-- **Connect your agent:** [llms.txt](https://global-ai-governance.github.io/global-ai-governance-toolkit/llms.txt), [machine-interface.json](https://global-ai-governance.github.io/global-ai-governance-toolkit/machine-interface.json), and the [AI Governance Model Context Protocol Server](https://github.com/GLOBAL-AI-GOVERNANCE/ai-governance-mcp) (AI Governance MCP; command `gaig-mcp`). Compatible with Model Context Protocol (MCP) based agents.
-- **Read the spec:** [versioned specifications](https://global-ai-governance.github.io/global-ai-governance-toolkit/connect.html#spec) and the [product map](https://github.com/GLOBAL-AI-GOVERNANCE/GLOBAL-AI-GOVERNANCE#product-map).
+- **Connect your agent:** [llms.txt](https://ai-governance.solutions/llms.txt), [machine-interface.json](https://ai-governance.solutions/machine-interface.json), and the [AI Governance Model Context Protocol Server](https://github.com/GLOBAL-AI-GOVERNANCE/ai-governance-mcp) (AI Governance MCP; command `gaig-mcp`). Compatible with Model Context Protocol (MCP) based agents.
+- **Read the spec:** [versioned specifications](https://ai-governance.solutions/connect.html#spec) and the [product map](https://github.com/GLOBAL-AI-GOVERNANCE/GLOBAL-AI-GOVERNANCE#product-map).
 
 Outputs are non-authorizing (`authority_effect: NONE`). Not affiliated with or endorsed by any AI lab or platform.
 <!-- /gaig:footer -->

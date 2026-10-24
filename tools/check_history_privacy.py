@@ -4,6 +4,12 @@
 An optional private JSON denylist may contain `prohibited_literals` and
 `prohibited_sha256_lowercase`. The denylist is read at runtime and is never
 embedded in public output.
+
+Shared control for the public estate. Callers pin this file by commit SHA.
+Default trailer policy: a trailer passes when it names an approved identity.
+`--exact-trailers` requires the trailer to be exactly `Name <email>` of an
+approved identity. `--allow-dependabot-signoff` additionally accepts only
+Dependabot's exact `Signed-off-by` service signoff.
 """
 from __future__ import annotations
 
@@ -25,6 +31,8 @@ APPROVED = {
 TRAILER = re.compile(r"(?im)^(co-authored-by|signed-off-by|reviewed-by|acked-by):\s*(.+)$")
 LOCAL_PATH = re.compile(r"(?i)(?:[a-z]:[\\/]users[\\/][^\\/\s]+|/" r"users/[^/\s]+|/" r"home/[^/\s]+)")
 EMAIL = re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.I)
+IDENTITY = re.compile(r"^\s*(.+?)\s*<([^<>]+)>\s*$")
+DEPENDABOT_SIGNOFF = ("dependabot[bot]", "support" + "@" + "github.com")
 
 
 def git(*args: str, binary: bool = False):
@@ -46,6 +54,17 @@ def private_hit(value: str, policy: dict) -> bool:
     hashes = set(policy.get("prohibited_sha256_lowercase", []))
     values = [value, *EMAIL.findall(value)]
     return any(hashlib.sha256(x.strip().lower().encode()).hexdigest() in hashes for x in values)
+
+
+def approved_trailer(kind: str, value: str, *, exact: bool = False, allow_dependabot_signoff: bool = False) -> bool:
+    """Return True when a trailer names an approved identity under the selected policy."""
+    match = IDENTITY.fullmatch(value)
+    identity = (match.group(1), match.group(2)) if match else None
+    if allow_dependabot_signoff and kind.lower() == "signed-off-by" and identity == DEPENDABOT_SIGNOFF:
+        return True
+    if exact:
+        return identity in APPROVED
+    return any(name in value and email in value for name, email in APPROVED)
 
 
 def blob_stream(object_ids: list[str]):
@@ -72,6 +91,8 @@ def blob_stream(object_ids: list[str]):
 def main() -> int:
     parser = argparse.ArgumentParser(allow_abbrev=False)
     parser.add_argument("--private-denylist", type=Path)
+    parser.add_argument("--exact-trailers", action="store_true")
+    parser.add_argument("--allow-dependabot-signoff", action="store_true")
     args = parser.parse_args()
     policy = json.loads(args.private_denylist.read_text(encoding="utf-8")) if args.private_denylist else {}
     findings: set[tuple[str, str]] = set()
@@ -90,7 +111,10 @@ def main() -> int:
         if LOCAL_PATH.search(message):
             findings.add(("PERSONAL_PATH", oid))
         for trailer in TRAILER.finditer(message):
-            if not any(name in trailer.group(2) and email in trailer.group(2) for name, email in APPROVED):
+            if not approved_trailer(
+                trailer.group(1), trailer.group(2),
+                exact=args.exact_trailers, allow_dependabot_signoff=args.allow_dependabot_signoff,
+            ):
                 findings.add(("UNAPPROVED_TRAILER", oid))
     objects = []
     for line in git("rev-list", "--objects", "--all").splitlines():

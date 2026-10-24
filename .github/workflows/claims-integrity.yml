@@ -21,5 +21,7 @@ jobs:
           fetch-depth: 0
       - name: Check reachable history privacy
         run: python3 -B tools/check_history_privacy.py
+      - name: Test shared history-privacy and PR-identity controls
+        run: python3 -B -m unittest discover -s tools -p "test_*.py" -v
       - name: Validate shared claims convention
         run: python3 -B tools/validate_claims_integrity.py

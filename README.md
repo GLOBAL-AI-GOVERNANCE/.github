@@ -1,10 +1,10 @@
 # GLOBAL AI GOVERNANCE — Repository Governance Defaults
 
-<!-- gag:nav -->
+<!-- gaig:nav -->
 [![Global AI Governance](https://img.shields.io/badge/Global_AI_Governance-portfolio-0b100d)](https://github.com/GLOBAL-AI-GOVERNANCE/GLOBAL-AI-GOVERNANCE) ![Status](https://img.shields.io/badge/status-infrastructure-lightgrey) ![authority_effect](https://img.shields.io/badge/authority__effect-NONE-lightgrey)
 
 **[Connect your agent](https://global-ai-governance.github.io/global-ai-governance-toolkit/connect.html#agents)** · **[Read the spec](https://global-ai-governance.github.io/global-ai-governance-toolkit/connect.html#spec)** · [All products](https://github.com/GLOBAL-AI-GOVERNANCE/GLOBAL-AI-GOVERNANCE#product-map)
-<!-- /gag:nav -->
+<!-- /gaig:nav -->
 
 This repository provides account-level repository governance defaults for public repositories owned by `GLOBAL-AI-GOVERNANCE` when a repository does not define a local override.
 
@@ -21,7 +21,7 @@ The [Claims Integrity convention](docs/CLAIMS_INTEGRITY.md) supplies a minimal m
 
 See [GOVERNANCE.md](GOVERNANCE.md), [docs/CHANGE_CONTROL.md](docs/CHANGE_CONTROL.md), and the opt-in [Release Governance Convention](docs/RELEASE_GOVERNANCE.md).
 
-<!-- gag:footer -->
+<!-- gaig:footer -->
 ## Part of Global AI Governance
 
 This repository holds the account-level repository governance defaults for every Global AI Governance repository.
@@ -30,4 +30,4 @@ This repository holds the account-level repository governance defaults for every
 - **Read the spec:** [versioned specifications](https://global-ai-governance.github.io/global-ai-governance-toolkit/connect.html#spec) and the [product map](https://github.com/GLOBAL-AI-GOVERNANCE/GLOBAL-AI-GOVERNANCE#product-map).
 
 Outputs are non-authorizing (`authority_effect: NONE`). Not affiliated with or endorsed by any AI lab or platform.
-<!-- /gag:footer -->
+<!-- /gaig:footer -->

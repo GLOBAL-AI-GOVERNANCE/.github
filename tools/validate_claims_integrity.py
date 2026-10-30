@@ -35,7 +35,7 @@ def main() -> None:
     for boundary in ("not described as a release", "does not imply certification", "humans retain authority"):
         if boundary.casefold() not in (template + documentation).casefold():
             fail(f"required boundary missing: {boundary}")
-    if "every organization repository automatically" not in documentation:
+    if "every account repository automatically" not in documentation:
         fail("adoption limitation is missing")
     print("Claims Integrity validation passed: convention, schema, review checklist, and automation boundary agree.")
 

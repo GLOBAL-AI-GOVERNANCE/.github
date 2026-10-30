@@ -47,4 +47,4 @@ An evidence-supported level is not an autonomous machine determination of organi
 
 ## Automation boundary
 
-The machine-readable convention and validator in this repository verify only the shared control files. They do not scan or govern every organization repository automatically. Adoption and enforcement remain explicit per repository, and humans retain authority for claim and release promotion.
+The machine-readable convention and validator in this repository verify only the shared control files. They do not scan or govern every account repository automatically. Adoption and enforcement remain explicit per repository, and humans retain authority for claim and release promotion.

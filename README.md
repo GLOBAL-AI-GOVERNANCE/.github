@@ -17,7 +17,7 @@ It is infrastructure, not a product, framework, runtime, certification, or sourc
 - describe change control and the opt-in release governance convention;
 - preserve repository-specific maturity, validation, and release controls.
 
-The [Claims Integrity convention](docs/CLAIMS_INTEGRITY.md) supplies a minimal machine-readable status vocabulary, public-change review checklist, and self-validating control. It is an adoption baseline, not a claim that every organization repository is centrally enforced.
+The [Claims Integrity convention](docs/CLAIMS_INTEGRITY.md) supplies a minimal machine-readable status vocabulary, public-change review checklist, and self-validating control. It is an adoption baseline, not a claim that every account repository is centrally enforced.
 
 See [GOVERNANCE.md](GOVERNANCE.md), [docs/CHANGE_CONTROL.md](docs/CHANGE_CONTROL.md), and the opt-in [Release Governance Convention](docs/RELEASE_GOVERNANCE.md).
 
